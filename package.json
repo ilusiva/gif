@@ -1,6 +1,7 @@
 {
-  "name": "gif",
-  "version": "0.0.1-alpha",
+  "name": "@ilusiva/gif",
+  "private": true,
+  "version": "0.1.0-alpha",
   "scripts": {
     "test": "jest --coverage"
   },
