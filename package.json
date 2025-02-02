@@ -1,0 +1,21 @@
+{
+  "name": "gif",
+  "version": "0.0.1-alpha",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilusiva/gif.git"
+  },
+  "keywords": [],
+  "author": "Ilusiva",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.10",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  }
+}
