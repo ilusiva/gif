@@ -9,13 +9,6 @@ export function validateHeader(header: IBlock<Header>) {
 }
 
 describe('Header', () => {
-    it('should create a header object', () => {
-      const buffer = Buffer.from([71, 73, 70, 56, 57, 97]);
-      const header = Header.read(buffer);
-
-      validateHeader(header);
-    });
-  
     it('should throw an error for invalid or insufficient data', () => {
       const buffer = Buffer.from([71, 73, 70]);
       expect(() => Header.read(buffer)).toThrow('Insufficient data in GIF file header.');

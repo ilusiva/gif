@@ -1,26 +1,17 @@
-import { IDecodable } from "./permissions/decodable";
 import { Header } from "./blocks/header";
 import { IGif } from "./gif";
-import { IBlock } from "./blocks/block";
+import { LogicalScreenDescriptor } from "./blocks/logical-screen-descriptor";
 /**
  * GIF decoder.
  */
-export class Decoder implements IDecodable<IGif> {
-    readonly buffer: Buffer;
-    /**
-     * Header block
-     */
-    private header: IBlock<Header> | undefined;
-
-    constructor(buffer: Buffer) {
-        this.buffer = buffer;
-    }
-
-    decode(): IGif {
-        this.header = Header.read(this.buffer);
+export class Decoder {
+    static decode(buffer: Buffer): IGif {
+        const header = Header.read(buffer);
+        const logicalScreenDescriptor = LogicalScreenDescriptor.read(buffer);
 
         return {
-            header: this.header,
+            header,
+            logicalScreenDescriptor,
         }
     }
 }
